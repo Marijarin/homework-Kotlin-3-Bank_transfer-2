@@ -23,7 +23,7 @@ fun mastercardMaestro(previousSum: Int, transferSum: Int): String {
     val maxPerMonth = 600_000
     val fee = when {
         transferSum > maxPerDay -> "Вы превысили суточный лимит. Он составляет 150_000 рублей"
-        (previousSum > maxPerMonth) || ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей"
+        ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей"
         (previousSum >= maxFeeFree) || ((previousSum + transferSum) > maxFeeFree) || transferSum > maxFeeFree -> (feeCalculated + additionalFee).toString() + " копеек"
         else -> "0 копеек"
     }
@@ -38,7 +38,7 @@ fun visaMir(previousSum: Int, transferSum: Int): String {
     val maxPerMonth = 600_000
     val fee = when {
         transferSum > maxPerDay -> "Вы превысили суточный лимит. Он составляет 150_000 рублей"
-        (previousSum > maxPerMonth) || ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей"
+        ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей"
         feeCalculated > feeMin -> "$feeCalculated копеек"
         else -> "$feeMin копеек"
     }
@@ -50,7 +50,7 @@ fun vKPay(previousSum: Int, transferSum: Int): String {
     val maxPerMonth = 40_000
     val fee = when {
         transferSum > maxPerDay -> "Вы превысили суточный лимит. Он составляет 15_000 рублей"
-        (previousSum > maxPerMonth) || ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 40_000 рублей"
+        ((previousSum + transferSum) > maxPerMonth) -> "Вы превысили лимит переводов за месяц. Он составляет 40_000 рублей"
         else -> "0 копеек"
     }
     return fee
