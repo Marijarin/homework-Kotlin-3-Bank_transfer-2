@@ -15,7 +15,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("ы превысили суточный лимит. Он составляет 150_000 рублей", fee)
+        assertEquals("Вы превысили суточный лимит. Он составляет 150_000 рублей", fee)
     }
     @Test
     fun mastercardMaestroSecondWhen() {
@@ -24,7 +24,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("ы превысили лимит переводов за месяц. Он составляет 600_000 рублей", fee)
+        assertEquals("Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей", fee)
     }
     @Test
     fun mastercardMaestroThirdWhenFirstCondition() {
@@ -33,7 +33,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("2060 копее", fee)
+        assertEquals("2060 копеек", fee)
     }
     @Test
     fun mastercardMaestroThirdWhenSecondCondition() {
@@ -42,7 +42,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("3200 копее", fee)
+        assertEquals("3200 копеек", fee)
     }
     @Test
     fun mastercardMaestroThirdWhenThirdCondition() {
@@ -51,7 +51,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("62000 копее", fee)
+        assertEquals("62000 копеек", fee)
     }
     @Test
     fun mastercardMaestroElse() {
@@ -60,7 +60,7 @@ class MainKtTest {
 
         val fee = mastercardMaestro(previousSum, transferSum)
 
-        assertEquals("0 копее", fee)
+        assertEquals("0 копеек", fee)
     }
 
     @Test
@@ -70,7 +70,7 @@ class MainKtTest {
 
         val fee = visaMir(previousSum, transferSum)
 
-        assertEquals("ы превысили суточный лимит. Он составляет 150_000 рублей", fee)
+        assertEquals("Вы превысили суточный лимит. Он составляет 150_000 рублей", fee)
     }
     @Test
     fun visaMirSecondWhen() {
@@ -79,7 +79,7 @@ class MainKtTest {
 
         val fee = visaMir(previousSum, transferSum)
 
-        assertEquals("ы превысили лимит переводов за месяц. Он составляет 600_000 рублей", fee)
+        assertEquals("Вы превысили лимит переводов за месяц. Он составляет 600_000 рублей", fee)
     }
     @Test
     fun visaMirThirdWhen() {
@@ -88,7 +88,7 @@ class MainKtTest {
 
         val fee = visaMir(previousSum, transferSum)
 
-        assertEquals("7500 копее", fee)
+        assertEquals("7500 копеек", fee)
     }
     @Test
     fun visaMirElse() {
@@ -97,7 +97,7 @@ class MainKtTest {
 
         val fee = visaMir(previousSum, transferSum)
 
-        assertEquals("3500 копее", fee)
+        assertEquals("3500 копеек", fee)
     }
 
     @Test
@@ -107,7 +107,7 @@ class MainKtTest {
 
         val fee = vKPay(previousSum, transferSum)
 
-        assertEquals("Вы превысили суточный лимит. Он составляет 15_000 рубле", fee)
+        assertEquals("Вы превысили суточный лимит. Он составляет 15_000 рублей", fee)
     }
     @Test
     fun vKPaySecondWhen() {
@@ -116,7 +116,7 @@ class MainKtTest {
 
         val fee = vKPay(previousSum, transferSum)
 
-        assertEquals("Вы превысили лимит переводов за месяц. Он составляет 40_000 рубле", fee)
+        assertEquals("Вы превысили лимит переводов за месяц. Он составляет 40_000 рублей", fee)
     }
     @Test
     fun vKPayElse() {
@@ -125,7 +125,7 @@ class MainKtTest {
 
         val fee = vKPay(previousSum, transferSum)
 
-        assertEquals("0 копее", fee)
+        assertEquals("0 копеек", fee)
     }
 
     @Test
